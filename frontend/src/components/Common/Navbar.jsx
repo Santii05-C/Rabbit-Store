@@ -98,13 +98,34 @@ const Navbar = () => {
         </div>
         <div className="p-4">
           <h2 className="text-xl font-semibold mb-4">Menu</h2>
-          <nav>
+          <nav className="space-y-4">
             <Link
               to="#"
               onClick={toggleNavDrawer}
               className="block text-gray-600 hover:text-block"
             >
               Men
+            </Link>
+            <Link
+              to="#"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-block"
+            >
+              Woman
+            </Link>
+            <Link
+              to="#"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-block"
+            >
+              Top Wear
+            </Link>
+            <Link
+              to="#"
+              onClick={toggleNavDrawer}
+              className="block text-gray-600 hover:text-block"
+            >
+              Bottom Wear
             </Link>
           </nav>
         </div>
