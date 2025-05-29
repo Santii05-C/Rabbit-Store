@@ -100,7 +100,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-gray-500"
             >
-              <TbBrandMeta h-5 w-5 />
+              <TbBrandMeta className="h-5 w-5" />
             </a>
             <a
               href="https://www.facebook.com"
@@ -108,7 +108,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-gray-500"
             >
-              <IoLogoInstagram h-5 w-5 />
+              <IoLogoInstagram className="h-5 w-5" />
             </a>
             <a
               href="https://www.facebook.com"
@@ -116,7 +116,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-gray-500"
             >
-              <RiTwitterXLine h-4 w-4 />
+              <RiTwitterXLine className="h-4 w-4" />
             </a>
           </div>
           <p className="text-gray-500">Call Us</p>
