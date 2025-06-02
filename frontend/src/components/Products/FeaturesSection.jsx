@@ -44,6 +44,5 @@ const FeaturesSection = () => {
     </section>
   );
 };
-//3:11
 
 export default FeaturesSection;
