@@ -89,6 +89,7 @@ const FilterSideBar = () => {
     updateURLParams(newFilters);
   };
 
+  //BUSCAR EXPLICACIÓN
   const updateURLParams = (newFilters) => {
     const params = new URLSearchParams();
     Object.keys(newFilters).forEach((key) => {
@@ -101,6 +102,7 @@ const FilterSideBar = () => {
     setSearchParams(params);
     navigate(`?${params.toString()}`);
   };
+  //4:29
 
   return (
     <div className="p-4">
