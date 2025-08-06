@@ -89,7 +89,6 @@ const FilterSideBar = () => {
     updateURLParams(newFilters);
   };
 
-  //BUSCAR EXPLICACIÓN
   const updateURLParams = (newFilters) => {
     const params = new URLSearchParams();
     Object.keys(newFilters).forEach((key) => {
@@ -102,7 +101,14 @@ const FilterSideBar = () => {
     setSearchParams(params);
     navigate(`?${params.toString()}`);
   };
-  //4:29
+
+  const handlePriceChange = (e) => {
+    const newPrice = e.target.value;
+    setPriceRange([0, newPrice]);
+    const newFilters = { ...filters, minPrice: 0, maxPrice: newPrice };
+    setFilters(filters);
+    updateURLParams(newFilters);
+  };
 
   return (
     <div className="p-4">
@@ -118,6 +124,7 @@ const FilterSideBar = () => {
               name="category"
               value={category}
               onChange={handleFilterChange}
+              checked={filters.category === category}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-500">{category}</span>
@@ -135,6 +142,7 @@ const FilterSideBar = () => {
               name="gender"
               value={gender}
               onChange={handleFilterChange}
+              checked={filters.gender === gender}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-500">{gender}</span>
@@ -153,7 +161,9 @@ const FilterSideBar = () => {
                 name="color"
                 value={color}
                 onClick={handleFilterChange}
-                className="w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105"
+                className={`w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${
+                  filters.color === color ? "ring-2 ring-blue-500" : ""
+                }`}
                 style={{ backgroundColor: color.toLowerCase() }}
               ></button>
             </div>
@@ -171,6 +181,7 @@ const FilterSideBar = () => {
               name="size"
               value={size}
               onChange={handleFilterChange}
+              checked={filters.size.includes(size)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{size}</span>
@@ -188,6 +199,7 @@ const FilterSideBar = () => {
               name="material"
               value={material}
               onChange={handleFilterChange}
+              checked={filters.material.includes(material)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{material}</span>
@@ -205,6 +217,7 @@ const FilterSideBar = () => {
               name="brand"
               value={brand}
               onChange={handleFilterChange}
+              checked={filters.brand.includes(brand)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{brand}</span>
@@ -222,6 +235,8 @@ const FilterSideBar = () => {
           name="priceRange"
           min={0}
           max={100}
+          value={priceRange[1]}
+          onChange={handlePriceChange}
           className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
         />
         <div className="flex justify-between text-gray-600 mt-2">
