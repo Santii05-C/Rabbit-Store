@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const cart = {
   products: [
     {
@@ -15,10 +17,25 @@ const cart = {
       image: "https://picsum.photos/150?random=2",
     },
   ],
+  totalPrice: 195,
 };
 
 const Checkout = () => {
-  return <div>Checkout</div>;
+  const navigate = useNavigate();
+  const [shippingAddress, setShippingAddress] = useState({
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    country: "",
+    phone: "",
+  });
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto py-10 px-6 tracking-tighter">
+      //4:44 Checkout
+    </div>
+  );
 };
 
 export default Checkout;
