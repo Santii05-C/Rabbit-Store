@@ -33,12 +33,18 @@ const Checkout = () => {
     country: "",
     phone: "",
   });
+
+  const handleCreateCheckout = (e) => {
+    e.preventDefault();
+    setCheckoutId(123);
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto py-10 px-6 tracking-tighter">
       {/* Left Section */}
       <div className="bg-white rounded-lg p-6">
         <h2 className="text-2xl uppercase mb-6">Checkout</h2>
-        <form>
+        <form onSubmit={handleCreateCheckout}>
           <h3 className="text-lg mb-4">Content Details</h3>
           <div className="mb-4">
             <label className="block text-gray-700">Email</label>
@@ -168,7 +174,10 @@ const Checkout = () => {
                 Continue to Payment
               </button>
             ) : (
-              <h3 className=""></h3>
+              <div>
+                <h3 className="">Pay with Paypal</h3>
+                {/* Paypal Component */}
+              </div>
             )}
           </div>
         </form>
