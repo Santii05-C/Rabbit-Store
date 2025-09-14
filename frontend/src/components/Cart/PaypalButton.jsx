@@ -5,7 +5,7 @@ const PaypalButton = ({ amount, onSuccess, onError }) => {
     <PayPalScriptProvider
       options={{
         "client-id":
-          "Af0CMqrHq0ne2pYOZ7BY0gU_QddkcU6ZuOTx2ig3FIkv9z43QtWVSQ2quhWo4RpJrKcJLAsr9SQnMASV",
+          "Afk3pGj7Fk1Q8MUAWwxMsfOXzjX1LfNPg1qsuNF9Un6WzITOqMLTWUc4AYU8UkHYHfth7pEBeJjQw3NA",
       }}
     >
       <PayPalButtons
