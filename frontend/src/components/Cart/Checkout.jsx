@@ -37,7 +37,8 @@ const Checkout = () => {
 
   const handleCreateCheckout = (e) => {
     e.preventDefault();
-    // setCheckoutId(123);
+    setCheckoutId(123);
+    //5:04
   };
 
   const handlePaymentSuccess = (details) => {
